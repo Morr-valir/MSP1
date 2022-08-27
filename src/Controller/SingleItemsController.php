@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
+class SingleItemsController extends AbstractController
+{
+    /**
+     * Route vers la page d'un boutique du site
+     */
+    #[Route('/single', name: 'app_single_items')]
+    public function index(): Response
+    {
+        return $this->render('single/index.html.twig', [
+            'controller_name' => 'SingleItemsController',
+        ]);
+    }
+}

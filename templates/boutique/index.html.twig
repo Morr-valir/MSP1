@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CDA Bio | Boutique
+{% endblock %}
+
+{% block body %}
+        <!--Hero section-->
+        <section class="hero is-medium has-background-success">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <p class="title">
+                      La boutique
+                    </p>
+                    <p class="subtitle">
+                      Retrouvez tous nos produit !
+                    </p>
+                </div>
+            </div>
+          </section>
+        <!--Section Product seasons-->
+        <section class="section">
+            <div class="container">
+                <h1 class="title is-size-4 has-text-centered">Produit de saisons</h1>
+                <hr>
+                <div class="columns is-justify-content-center">
+                {% include "./composants/items/card-items.html.twig" %}
+                {% include "./composants/items/card-items.html.twig" %}
+                {% include "./composants/items/card-items.html.twig" %}
+                {% include "./composants/items/card-items.html.twig" %}
+
+                </div>
+            </div>
+        </section>
+        <!--Section All product-->
+        <section class="section">
+            <div class="container">
+                <h1 class="title is-size-4 has-text-centered">Tous les produits</h1>
+                <hr>
+                <div class="columns is-multiline">
+                {% include "./composants/items/card-items.html.twig" %}
+                {% include "./composants/items/card-items.html.twig" %}
+                {% include "./composants/items/card-items.html.twig" %}
+                {% include "./composants/items/card-items.html.twig" %}
+                {% include "./composants/items/card-items.html.twig" %}
+                {% include "./composants/items/card-items.html.twig" %}
+                {% include "./composants/items/card-items.html.twig" %}
+                {% include "./composants/items/card-items.html.twig" %}
+                </div>
+            </div>
+        </section>{% endblock %}

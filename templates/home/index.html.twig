@@ -1,0 +1,136 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CDA Bio | Accueil
+{% endblock %}
+
+{% block body %}
+	<main>
+        <!--Hero section-->
+        <section class="hero is-large has-background-success">
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column">
+                            <div class="title-hending">
+                                <h1 class="title">Bienvenue sur Cda Bio</h1>
+                                <h2 class="subtitle">Le <b>Marché forrain 974</b> 100% digital</h2>
+                                <div class="content">
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque facere architecto saepe, a eos ab enim asperiores, minima quasi nisi odit inventore, totam vitae velit expedita libero fugiat eius neque.
+                                        Quam dignissimos ipsa quas vel, eligendi adipisci consequatur similique id pariatur accusamus nihil ea a facilis cupiditate, animi fugiat magni explicabo, veniam quibusdam magnam optio repellat dolorum harum! Deleniti, dicta.
+                                    </p>
+                                </div>
+                                <a class="button">Visitez la boutique</a>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <figure class="image is-5by3">
+                                <img src="/Assets/Medias/marche-forrain-saint-paul.jpg">
+                              </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Top selling product section-->
+        <section class="section">
+            <div class="container">
+                <h1 class="title has-text-centered">Produit du moment</h1>
+                <hr>
+                <div class="columns is-justify-content-center">
+                {% include "./composants/items/card-items.html.twig" %}
+                {% include "./composants/items/card-items.html.twig" %}
+                {% include "./composants/items/card-items.html.twig" %}
+                </div>
+            </div>
+        </section>
+        <!--Section contact form-->
+        <section class="section has-background-success">
+            <div class="container">
+                <div class="columns">
+                    <div class="column">
+                        <h1 class="title is-size-5">Nous retrouver</h1>
+                        <div class="content">
+                            <ul>
+                                <li>
+                                    <span class="icon">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </span>
+                                    contact@cdabio.re
+                                </li>
+                                <li>
+                                    <span class="icon">
+                                        <i class="fa-solid fa-phone"></i>
+                                    </span>
+                                    0262 00 80 80
+                                </li>
+                                <li>
+                                    <span class="icon">
+                                        <i class="fas fa-home"></i>
+                                    </span>
+                                    12 rue du centre expernet, 97420 Le Port
+                                </li>
+                            </ul>
+                        </div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1863.0685930281672!2d55.31582150345545!3d-20.947005246863938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2182862f5de47ca9%3A0xe9234e5890c80795!2sExpernet%20-%20Centre%20de%20formation%20informatique!5e0!3m2!1sfr!2sfr!4v1661416614592!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="column">
+                        <h2 class="title is-size-5">Demande spécial ? Contactez nous !</h2>
+                        <form action="">
+                            <div class="field">
+                                <label class="label">Nom & Prènom</label>
+                                <div class="control">
+                                  <input class="input" type="text" placeholder="Text input">
+                                </div>
+                              </div>
+                              <div class="field">
+                                <label class="label">Adresse mail</label>
+                                <div class="control has-icons-left has-icons-right">
+                                  <input class="input is-danger" type="email" placeholder="Email input">
+                                  <span class="icon is-small is-left">
+                                    <i class="fas fa-envelope"></i>
+                                  </span>
+                                  <span class="icon is-small is-right">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                  </span>
+                                </div>
+                                <p class="help is-danger">Email non valide !</p>
+                              </div>
+                              <div class="field">
+                                <label class="label">Sujet</label>
+                                <div class="control">
+                                  <div class="select">
+                                    <select>
+                                      <option>Select dropdown</option>
+                                      <option>Demande spécial</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="field">
+                                <label class="label">Message</label>
+                                <div class="control">
+                                  <textarea class="textarea" placeholder="Textarea"></textarea>
+                                </div>
+                              </div>
+                              <div class="field">
+                                <div class="control">
+                                  <label class="checkbox">
+                                    <input type="checkbox">
+                                    J'accepte les <a href="#">termes et conditions</a>
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="field is-grouped">
+                                <div class="control">
+                                  <button class="button is-link">Envoyer</button>
+                                </div>
+                                <div class="control">
+                                  <button class="button is-link is-light">Annuler</button>
+                                </div>
+                              </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}
