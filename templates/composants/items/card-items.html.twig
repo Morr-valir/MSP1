@@ -2,21 +2,20 @@
                         <div class="card">
                             <div class="card-image">
                               <figure class="image is-4by3">
-                                <img src="/Assets/Medias/pomme-de-terre.jpg" alt="Placeholder image">
+                                <img src="/Assets/Medias/{{ produit.image }}" alt="{{ produit.name }}">
                               </figure>
                             </div>
                             <div class="card-content">
                               <div class="media">
                                 <div class="media-content">
-                                  <p class="title is-4">Pomme de terre</p>
+                                  <p class="title is-4">{{ produit.name }}</p>
                                 </div>
                               </div>
                               <div class="content">
                                 <b>Provenance : </b>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Phasellus nec iaculis mauris.
+                                  {{ produit.description |raw  }}
                                 <br>
-                                <b>Prix : 1.5€ /Unité</b>
+                                <b>Prix : {{ produit.prix }}€ /Unité</b>
                               </div>
                               <div class="buttons has-addons is-right">
                                 <a href="/single" class="button">Acheter</a>

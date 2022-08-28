@@ -2,12 +2,21 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\ProduitRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
 {
+
+    private $repoProduit;
+    public function __construct(ProduitRepository $repoProduit)
+    {
+        $this->repoProduit = $repoProduit;
+    }
+
     /**
      * Route vers l'accueil du site
      */
@@ -16,6 +25,7 @@ class HomeController extends AbstractController
     {
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
+            'produitVedette' => $this->repoProduit->homeSection()
         ]);
     }
 
@@ -27,6 +37,9 @@ class HomeController extends AbstractController
     {
         return $this->render('boutique/index.html.twig', [
             'controller_name' => 'HomeController',
+            'produitVedette' => $this->repoProduit->homeSection(),
+            'ListProduit' => $this->repoProduit->findAll()
+
         ]);
     }
         /**

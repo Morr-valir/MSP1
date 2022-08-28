@@ -37,9 +37,9 @@
                 <h1 class="title has-text-centered">Produit du moment</h1>
                 <hr>
                 <div class="columns is-justify-content-center">
-                {% include "./composants/items/card-items.html.twig" %}
-                {% include "./composants/items/card-items.html.twig" %}
-                {% include "./composants/items/card-items.html.twig" %}
+                {% for produit in produitVedette %}
+                  {% include "./composants/items/card-items.html.twig" %}                  
+                {% endfor %}
                 </div>
             </div>
         </section>

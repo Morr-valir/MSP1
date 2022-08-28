@@ -20,14 +20,12 @@
         <!--Section Product seasons-->
         <section class="section">
             <div class="container">
-                <h1 class="title is-size-4 has-text-centered">Produit de saisons</h1>
+                <h1 class="title is-size-4 has-text-centered">Produit vendette</h1>
                 <hr>
                 <div class="columns is-justify-content-center">
-                {% include "./composants/items/card-items.html.twig" %}
-                {% include "./composants/items/card-items.html.twig" %}
-                {% include "./composants/items/card-items.html.twig" %}
-                {% include "./composants/items/card-items.html.twig" %}
-
+                {% for produit in produitVedette %}
+                    {% include "./composants/items/card-items.html.twig" %}                
+                {% endfor %}
                 </div>
             </div>
         </section>
@@ -37,14 +35,9 @@
                 <h1 class="title is-size-4 has-text-centered">Tous les produits</h1>
                 <hr>
                 <div class="columns is-multiline">
-                {% include "./composants/items/card-items.html.twig" %}
-                {% include "./composants/items/card-items.html.twig" %}
-                {% include "./composants/items/card-items.html.twig" %}
-                {% include "./composants/items/card-items.html.twig" %}
-                {% include "./composants/items/card-items.html.twig" %}
-                {% include "./composants/items/card-items.html.twig" %}
-                {% include "./composants/items/card-items.html.twig" %}
-                {% include "./composants/items/card-items.html.twig" %}
+                {% for produit in ListProduit %}
+                    {% include "./composants/items/card-items.html.twig" %}                    
+                {% endfor %}
                 </div>
             </div>
         </section>{% endblock %}
