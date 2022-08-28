@@ -30,6 +30,9 @@ class Produit
     #[ORM\ManyToOne(inversedBy: 'produits')]
     private ?User $producteur = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $image = null;
+
 
     public function __construct()
     {
@@ -109,6 +112,18 @@ class Produit
     public function setProducteur(?User $producteur): self
     {
         $this->producteur = $producteur;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }
