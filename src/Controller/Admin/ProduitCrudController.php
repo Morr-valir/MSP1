@@ -8,6 +8,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 
@@ -32,6 +33,7 @@ class ProduitCrudController extends AbstractCrudController
             TextField::new('name')->setLabel('Nom du Produit'),
             ImageField::new('image')->setBasePath($produitDir)->setUploadDir($produitUpload),
             TextEditorField::new('description')->setLabel('Provenance du produit'),
+            BooleanField::new('vedette'),
             NumberField::new('prix')->setLabel('Prix du produit'),
             AssociationField::new('categoryProduit')->setLabel('Categorie produit'),
             AssociationField::new('producteur')->setLabel('Producteur'),

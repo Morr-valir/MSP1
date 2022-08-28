@@ -33,6 +33,9 @@ class Produit
     #[ORM\Column(length: 255)]
     private ?string $image = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?bool $vedette = null;
+
 
     public function __construct()
     {
@@ -124,6 +127,18 @@ class Produit
     public function setImage(string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function isVedette(): ?bool
+    {
+        return $this->vedette;
+    }
+
+    public function setVedette(?bool $vedette): self
+    {
+        $this->vedette = $vedette;
 
         return $this;
     }
