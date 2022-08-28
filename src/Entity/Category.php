@@ -70,4 +70,12 @@ class Category
 
         return $this;
     }
+
+    /**
+     * Retourne de nom de la categorie ( utiliser pour easyadmin crud)
+     */
+    public function __toString()
+    {
+        return $this->name;
+    }
 }

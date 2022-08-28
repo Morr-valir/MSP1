@@ -154,4 +154,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+    /**
+     * Retourne de nom de la du producteur ( utiliser pour easyadmin crud)
+     */
+    public function __toString()
+    {
+        return $this->pseudo;
+    }
 }
