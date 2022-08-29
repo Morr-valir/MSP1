@@ -17,7 +17,7 @@ cd MSP1
 composer install
 ```
 
-Modification du  .ENV 
+Après modification du  .ENV 
 
 ```bash
 symfony console doctrine:database:create
