@@ -18,7 +18,7 @@
                                 <b>Prix : {{ produit.prix }}€ /Unité</b>
                               </div>
                               <div class="buttons has-addons is-right">
-                                <a href="/single" class="button">Acheter</a>
+                                <a href="{{ path('app_single_items',{'id':produit.id}) }}" class="button">Acheter</a>
                               </div>
                             </div>
                         </div>
