@@ -8,21 +8,21 @@
         <div class="field">
             <label class="label">Votre Pseudo</label>
             <div class="control">
-                {{ form_row(registrationForm.pseudo) }}
+                {{ form_row(registrationForm.pseudo, {'attr': {'class': 'input'}}) }}
             </div>
             <p class="help is-danger">{{ form_errors(registrationForm.pseudo) }}</p>
         </div>
         <div class="field">
             <label class="label">Votre adresse mail</label>
             <div class="control">
-                {{ form_row(registrationForm.email) }}
+                {{ form_row(registrationForm.email, {'attr': {'class': 'input'}}) }}
             </div>
             <p class="help is-danger">{{ form_errors(registrationForm.email) }}</p>
         </div>
         <div class="field">
             <label class="label">Votre mot de passe</label>
             <div class="control">
-                {{ form_row(registrationForm.plainPassword, {label: 'Password'}) }}
+                {{ form_row(registrationForm.plainPassword, {label: 'Password'}, {'attr': {'class': 'input'}}) }}
             </div>
             <p class="help is-danger">{{ form_errors(registrationForm.plainPassword) }}</p>
         </div>
