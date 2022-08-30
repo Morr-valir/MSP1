@@ -4,15 +4,37 @@
 
 {% block body %}
     <h1>Register</h1>
-
     {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.pseudo) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+        <div class="field">
+            <label class="label">Votre Pseudo</label>
+            <div class="control">
+                {{ form_row(registrationForm.pseudo) }}
+            </div>
+            <p class="help is-danger">{{ form_errors(registrationForm.pseudo) }}</p>
+        </div>
+        <div class="field">
+            <label class="label">Votre adresse mail</label>
+            <div class="control">
+                {{ form_row(registrationForm.email) }}
+            </div>
+            <p class="help is-danger">{{ form_errors(registrationForm.email) }}</p>
+        </div>
+        <div class="field">
+            <label class="label">Votre mot de passe</label>
+            <div class="control">
+                {{ form_row(registrationForm.plainPassword, {label: 'Password'}) }}
+            </div>
+            <p class="help is-danger">{{ form_errors(registrationForm.plainPassword) }}</p>
+        </div>
+        <div class="field">
+            <div class="control">
+                <label class="checkbox">
+                    {{ form_row(registrationForm.agreeTerms) }}
+                </label>
+            </div>
+        </div>
+        
 
-        <button type="submit" class="btn">Register</button>
+        <button type="submit" class="button">S'inscrire</button>
     {{ form_end(registrationForm) }}
 {% endblock %}
