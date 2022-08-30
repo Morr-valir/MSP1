@@ -3,38 +3,47 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
-    {{ form_start(registrationForm) }}
-        <div class="field">
-            <label class="label">Votre Pseudo</label>
-            <div class="control">
-                {{ form_row(registrationForm.pseudo, {'attr': {'class': 'input'}}) }}
+    <main>
+        <section class="container">
+        <h1 class="title">Register</h1>
+        {{ form_start(registrationForm) }}
+            <div class="field">
+                <label class="label">Votre Pseudo</label>
+                <div class="control">
+                    {{ form_row(registrationForm.pseudo, {'attr': {'class': 'input'}}) }}
+                </div>
+                <p class="help is-danger">{{ form_errors(registrationForm.pseudo) }}</p>
             </div>
-            <p class="help is-danger">{{ form_errors(registrationForm.pseudo) }}</p>
-        </div>
-        <div class="field">
-            <label class="label">Votre adresse mail</label>
-            <div class="control">
-                {{ form_row(registrationForm.email, {'attr': {'class': 'input'}}) }}
+            <div class="field">
+                <label class="label">Votre adresse mail</label>
+                <div class="control">
+                    {{ form_row(registrationForm.email, {'attr': {'class': 'input'}}) }}
+                </div>
+                <p class="help is-danger">{{ form_errors(registrationForm.email) }}</p>
             </div>
-            <p class="help is-danger">{{ form_errors(registrationForm.email) }}</p>
-        </div>
-        <div class="field">
-            <label class="label">Votre mot de passe</label>
-            <div class="control">
-                {{ form_row(registrationForm.plainPassword, {label: 'Password'}, {'attr': {'class': 'input'}}) }}
+            <div class="field">
+                <label class="label">Votre mot de passe</label>
+                <div class="control">
+                    {{ form_row(registrationForm.plainPassword, {'attr': {'class': 'input'}}) }}
+                </div>
+                <p class="help is-danger">{{ form_errors(registrationForm.plainPassword) }}</p>
             </div>
-            <p class="help is-danger">{{ form_errors(registrationForm.plainPassword) }}</p>
-        </div>
-        <div class="field">
+            <div class="field">
+            <label class="label">Rôle</label>
             <div class="control">
-                <label class="checkbox">
-                    {{ form_row(registrationForm.agreeTerms) }}
-                </label>
+                    {{ form_row(registrationForm.roles,{'attr': {'class': 'select'}}) }}
             </div>
-        </div>
-        
-
-        <button type="submit" class="button">S'inscrire</button>
-    {{ form_end(registrationForm) }}
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label class="checkbox">
+                        {{ form_row(registrationForm.agreeTerms) }}
+                    </label>
+                </div>
+            </div>
+            
+            <button type="submit" class="button">S'inscrire</button>
+        {{ form_end(registrationForm) }}
+        </section>
+    </main>
 {% endblock %}

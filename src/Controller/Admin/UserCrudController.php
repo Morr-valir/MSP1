@@ -6,6 +6,7 @@ use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
@@ -27,6 +28,11 @@ class UserCrudController extends AbstractCrudController
             TextField::new('pseudo')->setLabel('pseudo utilisateur'),
             EmailField::new('email')->setLabel('Adresse mail'),
             TextField::new('password')->setFormType(PasswordType::class)->setLabel('Mot de passe'),
+            ChoiceField::new('roles')->setChoices([
+                'choices' => [
+                        'Utilisateur' => 'ROLE_USER',
+                        'Agriculteur' => 'ROLE_AGRICULTEUR'
+        ]]),
         ];
     }
 }
