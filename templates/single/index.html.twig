@@ -28,7 +28,7 @@
                             <p><b>Producteur : </b>{{ produit.producteur }}</p>
                             <p><b>Prix : {{ produit.prix }} € le Kg</b></p>
                             <div class="buttons">
-                                <a href="panier.html" class="button">Ajouter au panier</a>
+                                <a href="{{ path('app_panierAdd',{'id':produit.id}) }}" class="button">Ajouter au panier</a>
                             </div>
                         </div>
                     </div>
