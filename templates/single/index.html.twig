@@ -7,9 +7,7 @@
         <section class="hero is-link">
             <div class="hero-body">
                 <div class="container has-text-centered">
-                    <p class="title is-size-4">
-                      Description produit
-                    </p>
+                    <p class="title is-size-4"> Description produit</p>
                 </div>
             </div>
         </section>
@@ -19,16 +17,16 @@
                 <div class="columns">
                     <div class="column">
                         <figure class="image is-3by2">
-                            <img src="https://bulma.io/images/placeholders/256x256.png">
+                            <img src="/Assets/Medias/{{ produit.image }}">
                         </figure>
                     </div>
                     <div class="column">
-                        <h1 class="title is-size-4">Pomme de terre</h1>
+                        <h1 class="title is-size-4">{{ produit.name }}</h1>
                         <hr>
                         <div class="content">
-                            <p><b>Provenance : </b> Ces pomme de terre viennent de la ville de Saint Louis. Ne contient pas de pésticides.</p>
-                            <p><b>Producteur : </b>Jean cristophe</p>
-                            <p><b>Prix : 1.5 €/u</b></p>
+                            <p><b>Provenance : </b>{{ produit.description | raw}}</p>
+                            <p><b>Producteur : </b>{{ produit.producteur }}</p>
+                            <p><b>Prix : {{ produit.prix }} € le Kg</b></p>
                             <div class="buttons">
                                 <a href="panier.html" class="button">Ajouter au panier</a>
                             </div>

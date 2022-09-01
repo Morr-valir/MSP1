@@ -2,7 +2,7 @@
                         <div class="card">
                             <div class="card-image">
                               <figure class="image is-4by3">
-                                <img src="/Assets/Medias/{{ produit.image }}" alt="{{ produit.name }}">
+                                <img src="{{ asset('Assets/Medias/') ~ produit.image }}" alt="{{ produit.name }}">
                               </figure>
                             </div>
                             <div class="card-content">
@@ -15,7 +15,7 @@
                                 <b>Provenance : </b>
                                   {{ produit.description |raw  }}
                                 <br>
-                                <b>Prix : {{ produit.prix }}€ /Unité</b>
+                                <b>Prix : {{ produit.prix }}€ Le Kg</b>
                               </div>
                               <div class="buttons has-addons is-right">
                                 <a href="{{ path('app_single_items',{'id':produit.id}) }}" class="button">Acheter</a>

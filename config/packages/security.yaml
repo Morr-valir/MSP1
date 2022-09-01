@@ -33,7 +33,7 @@ security:
     access_control:
          - { path: ^/admin, roles: [ROLE_ADMIN, ROLE_AGRICULTEUR] }
          - { path: ^/panier, roles: ROLE_USER }
-         - { path: ^/profil, roles: ROLE_AGRICULTEUR   }
+         - { path: ^/profil, roles: ROLE_AGRICULTEUR }
 
 when@test:
     security:
