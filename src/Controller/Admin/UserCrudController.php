@@ -28,11 +28,11 @@ class UserCrudController extends AbstractCrudController
             TextField::new('pseudo')->setLabel('pseudo utilisateur'),
             EmailField::new('email')->setLabel('Adresse mail'),
             TextField::new('password')->setFormType(PasswordType::class)->setLabel('Mot de passe'),
-            ChoiceField::new('roles')->setChoices([
-                'choices' => [
-                        'Utilisateur' => 'ROLE_USER',
-                        'Agriculteur' => 'ROLE_AGRICULTEUR'
-        ]]),
+        //     ChoiceField::new('roles')->setChoices([
+        //         'choices' => [
+        //                 'Utilisateur' => 'ROLE_USER',
+        //                 'Agriculteur' => 'ROLE_AGRICULTEUR'
+        // ]]),
         ];
     }
 }

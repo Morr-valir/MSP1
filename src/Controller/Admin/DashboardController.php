@@ -33,10 +33,20 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('Gestion produit', 'fa-solid fa-cart-shopping', Produit::class);
-        yield MenuItem::linkToCrud('Gestion categorie', 'fa-solid fa-list', Category::class);
-        yield MenuItem::linkToCrud('Gestion utilisateurs', 'fa-solid fa-user', User::class);
+
+        if ( $this->isGranted('ROLE_ADMIN') ) {
+            return [                
+                yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home'),
+                yield MenuItem::linkToCrud('Gestion produit', 'fa-solid fa-cart-shopping', Produit::class),
+                yield MenuItem::linkToCrud('Gestion categorie', 'fa-solid fa-list', Category::class),
+                yield MenuItem::linkToCrud('Gestion utilisateurs', 'fa-solid fa-user', User::class),
+            ];}
+
+         if ( $this->isGranted('ROLE_AGRICULTEUR') ) {
+            return [                
+                yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home'),
+                yield MenuItem::linkToCrud('Gestion produit', 'fa-solid fa-cart-shopping', Produit::class),
+            ];}
 
     }
 }
