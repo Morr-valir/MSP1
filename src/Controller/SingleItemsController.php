@@ -12,6 +12,7 @@ class SingleItemsController extends AbstractController
      * Route vers la page d'un boutique du site
      */
     #[Route('/Detail/{id}', name: 'app_single_items')]
+    #[Entity("item", expr="repository.findOneById(id)")]
     public function index(): Response
     {
         return $this->render('single/index.html.twig', [
