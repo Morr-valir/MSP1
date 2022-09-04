@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Produit;
+use App\Repository\ProduitRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
@@ -16,12 +17,12 @@ class SingleItemsController extends AbstractController
      */
     #[Route('/Detail/{id}', name: 'app_single_items')]
     #[Entity("Produit", expr:"repository.findOneById(id)")]
-    public function index(Produit $produit): Response
+    public function index(Produit $produit, ProduitRepository $repoProduit): Response
     {
-        //dd($produit);
         return $this->render('single/index.html.twig', [
             'controller_name' => 'SingleItemsController',
             'produit' => $produit,
+            'similiProduct' => $repoProduit->SimiliProduct(),
         ]);
     }
 }

@@ -40,7 +40,6 @@ class ProduitRepository extends ServiceEntityRepository
     }
 
     /**
-     * 
      * @return Produit[] Returns an array of Produit objects
     */
     public function homeSection()
@@ -48,6 +47,17 @@ class ProduitRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('i') // 'i' for "produit"
             ->andWhere('i.vedette = :status') // request parameter "status of vendette"
             ->setParameter('status', '1') // parameter for request "1 = online / 0 = offline"
+            ->setMaxResults(3) // Limit 10 items
+            ->getQuery() // get query
+            ->getResult(); // get result of query
+    }
+
+    /**
+    * @return Produit[] Returns an array of Produit objects
+    */
+    public function SimiliProduct()
+    {
+        return $this->createQueryBuilder('p') // 'p' for "produit"
             ->setMaxResults(3) // Limit 10 items
             ->getQuery() // get query
             ->getResult(); // get result of query

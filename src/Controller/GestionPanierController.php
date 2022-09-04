@@ -29,9 +29,17 @@ class GestionPanierController extends AbstractController
                 'quantite' =>$quantity,
             ];
         }
-        dd($panier);
+        //Boucle pour calculer la quantité en € des produits du panier
+        $valuePanierPrix = 0;
+        foreach($panier as $produit){
+            $prixT = $produit['produit']->getPrix() * $produit['quantite'];
+            $valuePanierPrix += $prixT;
+        }
+        //dd($panier);
         return $this->render('gestion_panier/index.html.twig', [
             'controller_name' => 'GestionPanierController',
+            'panierContent' => $panier,
+            'prixTotal' => $valuePanierPrix,
         ]);
     }
 
