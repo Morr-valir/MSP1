@@ -29,7 +29,13 @@
                             <td>{{ panier.produit.name }}</td>
                             <td>{{ panier.produit.prix }}</td>
                             <td>{{ panier.quantite }}</td>
-                            <td>Supprimer</td>
+                            <td class="is-flex is-justify-content-center">
+                                <a href="">
+                                    <span class="icon has-text-link">
+                                        <i class="fa-solid fa-ban"style="color: red;"></i>
+                                    </span>
+                                </a>
+                            </td>
                         </tr>
                         {% endfor %}
 
