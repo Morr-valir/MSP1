@@ -62,7 +62,21 @@ class GestionPanierController extends AbstractController
         
         //Persistance du produit ajouter dans la session
         $session->set('Panier',$panierUser);
-        dd($session->get('Panier'));
+        return $this->redirectToRoute("app_shop");
+    }
+
+    /**
+    * Fonction de suppression du panier
+    */
+    #[Route('panier/supp/{id}', name: 'app_panierSupp')]
+    public function suppPanier($id, SessionInterface $session){
+        //initialisation d'un panier vide si il n'exsiste pas
+        $panier = $session->get('Panier',[]);
+        //Si le panier et pas vide alors on supprime le produit via sont id
+        if (!empty($panier[$id])) unset($panier[$id]);
+        //On met à jour le panier existant
+        $session->set('Panier',$panier);
+        return $this->redirectToRoute("app_gestion_panier");
     }
 
 }

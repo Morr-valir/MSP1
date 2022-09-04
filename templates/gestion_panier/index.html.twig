@@ -30,7 +30,7 @@
                             <td>{{ panier.produit.prix }}</td>
                             <td>{{ panier.quantite }}</td>
                             <td class="is-flex is-justify-content-center">
-                                <a href="">
+                                <a href="{{ path('app_panierSupp',{'id':panier.produit.id}) }}">
                                     <span class="icon has-text-link">
                                         <i class="fa-solid fa-ban"style="color: red;"></i>
                                     </span>
